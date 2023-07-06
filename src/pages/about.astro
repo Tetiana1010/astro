@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro'
+const framework = "Astro"
+const benefits = ['Performance', 'Developer Experience', 'Universal Rendering', 'Component-oriented Development']
+const htmlString = '<p>These are just some of the benefits of using Astro</p>';
+---
+
+<Layout title="About">
+    <main>
+        <h1>About <span class="text-gradient">{framework}</span></h1>
+        <ul>
+            {benefits.map((benefit) => (
+                <li>{benefit}</li>
+            ))}
+        </ul>
+        <Fragment set:html={htmlString} />
+        <button id="button">I like {framework}</button>
+        <script>
+            function handleClick() {
+                console.log('clicked')
+            }
+            document.querySelector('#button').addEventListener("click", handleClick)
+        </script>
+
+    </main>
+</Layout>

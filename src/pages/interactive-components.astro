@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro"
+import InteractiveButton from "../components/InteractiveButton";
+---
+
+<Layout title="Interactive Components">
+    <main>
+        <h1>Interactive <span class="text-gradient">Components</span></h1>
+        <InteractiveButton client:load />
+    </main>
+</Layout>

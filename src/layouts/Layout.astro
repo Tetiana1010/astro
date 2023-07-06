@@ -1,0 +1,127 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<nav class="header__nav">
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/markdown">Markdown</a>
+				<a href="/integrations">Integrations</a>
+				<a href="/interactive-components">Interactive Components</a>
+			</nav>
+		</header>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	body {
+		margin: 0;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	header {
+      background-color: #f8f8f8;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header__nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .header__nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .nheader__nava a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+	}
+
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+
+	button {
+		display: inline-block;
+		padding: 10px 20px;
+		font-size: 16px;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+		color: #ffffff;
+		background-color: #3366cc;
+		border-radius: 4px;
+		border: none;
+		cursor: pointer;
+	}
+
+	button:hover {
+	background-color: #5588ee;
+	}
+
+	button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(51, 102, 204, 0.4);
+	}
+
+	button:active {
+	background-color: #274d88;
+	}
+	
+</style>

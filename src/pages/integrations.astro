@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro'
+import MyReactComponent from '../components/MyReactComponent.jsx';
+import MyVueComponent from '../components/MyVueComponent.vue';
+---
+
+<Layout title="Mixing Frameworks">
+    <main>
+        <h1>Mixing <span class="text-gradient">Frameworks</span></h1>
+        <ul class="link-card-grid">
+            <MyReactComponent />
+            <MyVueComponent />
+        </ul>
+    </main>
+</Layout>
+
+
+<style>
+</style>
